@@ -54,7 +54,7 @@ function ChangesWindow(){
 				bottom: 10,
 				color: textColor,
 				font: {
-					fontSize: 15
+					fontSize: 25
 				},
 				right: 10,
 				title: 'Siguiente'
@@ -70,7 +70,7 @@ function ChangesWindow(){
 				bottom: 10,
 				color: textColor,
 				font: {
-					fontSize: 15
+					fontSize: 25
 				},
 				left: 10,
 				title: 'Anterior'
