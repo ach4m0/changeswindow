@@ -1,5 +1,5 @@
 (function(){
 	// Open MainWindow
-	var MainWindow = require('/ui/ChangesWindow');
-	new MainWindow().open();
+	var ChangesWindow = require('/ui/ChangesWindow');
+	new ChangesWindow().open();
 })();
