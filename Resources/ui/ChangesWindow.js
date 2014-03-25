@@ -8,6 +8,8 @@ function ChangesWindow(){
 			navBarHidden: true
 		}),
 		//End custom parameters
+		WhiteWindow = require('/ui/WhiteWindow'),
+		//End requires
 		view1 = Ti.UI.createView({
 			backgroundColor: 'transparent'
 		}),
@@ -34,8 +36,25 @@ function ChangesWindow(){
 		scrollableView = Ti.UI.createScrollableView({
 			views: [view1,view2,view3],
 			showPagingControl: false
+		}),
+		endButton = Ti.UI.createButton({
+			background: 'transparent',
+			bottom: 10,
+			color: textColor,
+			font: {
+				fontSize: 25
+			},
+			right: 10,
+			title: 'Finalizar'
 		});
-		
+
+		//Event to endButton
+		endButton.addEventListener('click',function(event){
+			Ti.App.Properties.setBool('new_installation',false);
+			self.close();
+			WhiteWindow().open();
+		});
+
 		//Adding elements
 		view1.add(text1);
 		view1.add(picture1);
@@ -43,11 +62,12 @@ function ChangesWindow(){
 		view2.add(createNextButton());
 		view2.add(createPreviousButton());
 		view3.add(createPreviousButton());
+		view3.add(endButton);
 		self.add(scrollableView);
-		
-		
+
+
 		return self;
-		
+
 		function createNextButton(){
 			var nextButton = Ti.UI.createButton({
 				backgroundColor: 'transparent',
