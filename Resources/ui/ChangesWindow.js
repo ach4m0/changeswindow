@@ -38,7 +38,7 @@ function ChangesWindow(){
 			showPagingControl: false
 		}),
 		endButton = Ti.UI.createButton({
-			background: 'transparent',
+			backgroundColor: 'transparent',
 			bottom: 10,
 			color: textColor,
 			font: {
@@ -50,7 +50,7 @@ function ChangesWindow(){
 
 		//Event to endButton
 		endButton.addEventListener('click',function(event){
-			Ti.App.Properties.setBool('new_installation',false);
+			Ti.App.Properties.setString('version',version);
 			self.close();
 			WhiteWindow().open();
 		});
